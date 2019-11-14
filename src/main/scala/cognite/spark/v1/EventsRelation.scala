@@ -31,7 +31,11 @@ class EventsRelation(config: RelationConfig)(val sqlContext: SQLContext)
         "minStartTime",
         "maxStartTime",
         "minEndTime",
-        "maxEndTime")
+        "maxEndTime",
+        "minCreatedTime",
+        "maxCreatedTime",
+        "minLastUpdatedTime",
+        "maxLastUpdatedTime")
     val pushdownFilterExpression = toPushdownFilterExpression(filters)
     val shouldGetAllRows = shouldGetAll(pushdownFilterExpression, fieldNames)
     val filtersAsMaps = pushdownToParameters(pushdownFilterExpression)
